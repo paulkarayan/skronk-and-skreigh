@@ -1,0 +1,182 @@
+[
+  {
+    "file": "ROWAN/Banshee.mp3",
+    "filename": "Banshee.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 198.77,
+    "librosa_percussive": 99.38,
+    "librosa_onset": 198.77,
+    "librosa_tempogram": 99.38
+  },
+  {
+    "file": "ROWAN/Boys of Ballycastle.mp3",
+    "filename": "Boys of Ballycastle.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 99.38,
+    "librosa_percussive": 99.38,
+    "librosa_onset": 99.38,
+    "librosa_tempogram": 99.38
+  },
+  {
+    "file": "ROWAN/Mug of Brown Ale - 26_01_2021, 13.29.mp3",
+    "filename": "Mug of Brown Ale - 26_01_2021, 13.29.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 73.83,
+    "librosa_percussive": 112.35,
+    "librosa_onset": 73.83,
+    "librosa_tempogram": 112.35
+  },
+  {
+    "file": "ROWAN/Patrick Doherty_s Barndance.mp3",
+    "filename": "Patrick Doherty_s Barndance.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 123.05,
+    "librosa_percussive": 123.05,
+    "librosa_onset": 123.05,
+    "librosa_tempogram": 123.05
+  },
+  {
+    "file": "ROWAN/Stack of Wheat.mp3",
+    "filename": "Stack of Wheat.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 99.38,
+    "librosa_percussive": 99.38,
+    "librosa_onset": 99.38,
+    "librosa_tempogram": 99.38
+  },
+  {
+    "file": "ROWAN/ah surely.mp3",
+    "filename": "ah surely.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 99.38,
+    "librosa_percussive": 99.38,
+    "librosa_onset": 99.38,
+    "librosa_tempogram": 99.38
+  },
+  {
+    "file": "ROWAN/an paistin fionn.mp3",
+    "filename": "an paistin fionn.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 107.67,
+    "librosa_percussive": 107.67,
+    "librosa_onset": 107.67,
+    "librosa_tempogram": 107.67
+  },
+  {
+    "file": "ROWAN/boys of the town.mp3",
+    "filename": "boys of the town.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 172.27,
+    "librosa_percussive": 92.29,
+    "librosa_onset": 172.27,
+    "librosa_tempogram": 95.7
+  },
+  {
+    "file": "ROWAN/callopie house.mp3",
+    "filename": "callopie house.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 95.7,
+    "librosa_percussive": 184.57,
+    "librosa_onset": 95.7,
+    "librosa_tempogram": 95.7
+  },
+  {
+    "file": "ROWAN/chaffpool post.mp3",
+    "filename": "chaffpool post.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 112.35,
+    "librosa_percussive": 117.45,
+    "librosa_onset": 112.35,
+    "librosa_tempogram": 112.35
+  },
+  {
+    "file": "ROWAN/eavesdropper.mp3",
+    "filename": "eavesdropper.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 89.1,
+    "librosa_percussive": 172.27,
+    "librosa_onset": 89.1,
+    "librosa_tempogram": 172.27
+  },
+  {
+    "file": "ROWAN/eddie kellys.mp3",
+    "filename": "eddie kellys.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 172.27,
+    "librosa_percussive": 172.27,
+    "librosa_onset": 172.27,
+    "librosa_tempogram": 172.27
+  },
+  {
+    "file": "ROWAN/jackie colemans.mp3",
+    "filename": "jackie colemans.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 107.67,
+    "librosa_percussive": 107.67,
+    "librosa_onset": 107.67,
+    "librosa_tempogram": 107.67
+  },
+  {
+    "file": "ROWAN/last nights fun.mp3",
+    "filename": "last nights fun.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 103.36,
+    "librosa_percussive": 103.36,
+    "librosa_onset": 103.36,
+    "librosa_tempogram": 103.36
+  },
+  {
+    "file": "ROWAN/maid in the meadow.mp3",
+    "filename": "maid in the meadow.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 152.0,
+    "librosa_percussive": 152.0,
+    "librosa_onset": 152.0,
+    "librosa_tempogram": 152.0
+  },
+  {
+    "file": "ROWAN/marias waltz.mp3",
+    "filename": "marias waltz.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 123.05,
+    "librosa_percussive": 129.2,
+    "librosa_onset": 123.05,
+    "librosa_tempogram": 129.2
+  },
+  {
+    "file": "ROWAN/musical priest.mp3",
+    "filename": "musical priest.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 172.27,
+    "librosa_percussive": 172.27,
+    "librosa_onset": 172.27,
+    "librosa_tempogram": 172.27
+  },
+  {
+    "file": "ROWAN/my love is fair and handsome.mp3",
+    "filename": "my love is fair and handsome.mp3",
+    "duration": 30,
+    "offset": -1,
+    "librosa_standard": 103.36,
+    "librosa_percussive": 103.36,
+    "librosa_onset": 103.36,
+    "librosa_tempogram": 103.36
+  }
+]

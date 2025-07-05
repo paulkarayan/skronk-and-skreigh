@@ -1,0 +1,79 @@
+BPM Detection Summary Report
+================================================================================
+
+Total files analyzed: 18
+Methods used: librosa_onset, librosa_percussive, librosa_standard, librosa_tempogram
+
+Method Statistics:
+----------------------------------------
+librosa_onset:
+  Average BPM: 122.5
+  Range: 73.8 - 198.8
+  Files processed: 18/18
+
+librosa_percussive:
+  Average BPM: 124.9
+  Range: 92.3 - 184.6
+  Files processed: 18/18
+
+librosa_standard:
+  Average BPM: 122.5
+  Range: 73.8 - 198.8
+  Files processed: 18/18
+
+librosa_tempogram:
+  Average BPM: 119.8
+  Range: 95.7 - 172.3
+  Files processed: 18/18
+
+
+Files with High Variance (>20 BPM difference):
+------------------------------------------------------------
+
+Banshee.mp3:
+  librosa_onset: 198.8 BPM
+  librosa_percussive: 99.4 BPM
+  librosa_standard: 198.8 BPM
+  librosa_tempogram: 99.4 BPM
+  Variance: 99.4 BPM
+
+Mug of Brown Ale - 26_01_2021, 13.29.mp3:
+  librosa_onset: 73.8 BPM
+  librosa_percussive: 112.3 BPM
+  librosa_standard: 73.8 BPM
+  librosa_tempogram: 112.3 BPM
+  Variance: 38.5 BPM
+
+boys of the town.mp3:
+  librosa_onset: 172.3 BPM
+  librosa_percussive: 92.3 BPM
+  librosa_standard: 172.3 BPM
+  librosa_tempogram: 95.7 BPM
+  Variance: 80.0 BPM
+
+callopie house.mp3:
+  librosa_onset: 95.7 BPM
+  librosa_percussive: 184.6 BPM
+  librosa_standard: 95.7 BPM
+  librosa_tempogram: 95.7 BPM
+  Variance: 88.9 BPM
+
+eavesdropper.mp3:
+  librosa_onset: 89.1 BPM
+  librosa_percussive: 172.3 BPM
+  librosa_standard: 89.1 BPM
+  librosa_tempogram: 172.3 BPM
+  Variance: 83.2 BPM
+
+
+Method Agreement Analysis:
+----------------------------------------
+librosa_onset vs librosa_standard: 100.0% agreement (18/18 files)
+librosa_percussive vs librosa_tempogram: 88.9% agreement (16/18 files)
+librosa_onset vs librosa_tempogram: 72.2% agreement (13/18 files)
+librosa_standard vs librosa_tempogram: 72.2% agreement (13/18 files)
+librosa_onset vs librosa_percussive: 61.1% agreement (11/18 files)
+librosa_percussive vs librosa_standard: 61.1% agreement (11/18 files)
+
+================================================================================
+Report generated successfully.
