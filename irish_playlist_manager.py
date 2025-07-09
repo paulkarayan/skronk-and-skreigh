@@ -77,11 +77,18 @@ class IrishPlaylistManager:
             return []
             
         with open(target_file, 'r') as f:
-            lines = f.readlines()
+            content = f.read()
             
+        # Remove HTML comments (<!-- ... -->)
+        import re
+        content = re.sub(r'<!--.*?-->', '', content, flags=re.DOTALL)
+        
+        lines = content.split('\n')
+        
         for line in lines:
             line = line.strip()
-            if line and not line.startswith('#'):  # Skip empty lines and comments
+            # Skip empty lines and lines starting with #
+            if line and not line.startswith('#'):
                 # Split by ' / ' to get individual tunes
                 tunes = [tune.strip() for tune in line.split(' / ')]
                 target_sets.append(tunes)

@@ -19,6 +19,15 @@ Irish traditional music is often played in "sets" - groups of 2-4 tunes played c
 
 ## Usage
 
+### quick start for pk
+<add your stuff to target.md>
+source .venv/bin/activate
+python create_spotify_playlist.py
+
+
+python create_spotify_playlist.py --overload --versions 3
+
+
 ### Basic Setup
 
 1. Edit `target.md` to list the sets you want to learn:
