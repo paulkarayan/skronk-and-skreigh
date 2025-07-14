@@ -76,8 +76,24 @@ def main():
     parser.add_argument(
         "--threshold",
         type=float,
-        default=0.85,
-        help="Minimum match score (default: 0.85)"
+        default=0.8,
+        help="Minimum match score (default: 0.8)"
+    )
+    parser.add_argument(
+        "--async",
+        action="store_true",
+        dest="use_async",
+        help="Use parallel/async search for better performance"
+    )
+    parser.add_argument(
+        "--max-workers",
+        type=int,
+        help="Maximum number of parallel workers (default: CPU count)"
+    )
+    parser.add_argument(
+        "--exclude-unknown",
+        action="store_true",
+        help="Exclude files from Unknown Artist/Unknown Album directories"
     )
     
     args = parser.parse_args()
@@ -121,13 +137,25 @@ def main():
     # Search for files
     print(f"\nSearching for audio files in: {', '.join(args.directories)}")
     
-    file_results = find_tunes_for_set(
-        list(all_tunes),
-        args.directories,
-        use_aliases=True,
-        threshold=args.threshold,
-        overload=args.overload
-    )
+    if args.use_async:
+        from local_file_search_async import find_tunes_for_set_optimized
+        file_results = find_tunes_for_set_optimized(
+            list(all_tunes),
+            args.directories,
+            use_aliases=True,
+            threshold=args.threshold,
+            overload=args.overload,
+            use_async=True,
+            max_workers=args.max_workers
+        )
+    else:
+        file_results = find_tunes_for_set(
+            list(all_tunes),
+            args.directories,
+            use_aliases=True,
+            threshold=args.threshold,
+            overload=args.overload
+        )
     
     # Count found files
     total_found = sum(len(files) for files in file_results.values())
@@ -155,6 +183,21 @@ def main():
     
     if playlist_path:
         print(f"\nPlaylist created: {playlist_path}")
+        
+        # Verify no duplicates
+        from vlc_playlist import verify_playlist_no_duplicates
+        total, unique, duplicates = verify_playlist_no_duplicates(playlist_path)
+        
+        if duplicates:
+            print(f"\n⚠️  WARNING: Playlist contains {len(duplicates)} duplicate files!")
+            print("Duplicates found:")
+            for dup in duplicates[:5]:  # Show first 5
+                print(f"  - {dup}")
+            if len(duplicates) > 5:
+                print(f"  ... and {len(duplicates) - 5} more")
+        else:
+            print(f"✓ Verified: {total} unique files in playlist")
+        
         print("\nYou can open this with:")
         # Keep command on one line
         cmd = f'vlc "{playlist_path}"'

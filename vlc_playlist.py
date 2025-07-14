@@ -7,7 +7,7 @@ Supports M3U and XSPF formats.
 import os
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Tuple
 from urllib.parse import quote
 
 
@@ -130,6 +130,39 @@ def create_xspf_playlist(
     return output_path.absolute()
 
 
+def verify_playlist_no_duplicates(playlist_path: Path) -> Tuple[int, int, List[str]]:
+    """
+    Verify that a playlist contains no duplicate files.
+    
+    Returns:
+        Tuple of (total_entries, unique_entries, list_of_duplicates)
+    """
+    if not playlist_path.exists():
+        return 0, 0, []
+    
+    file_paths = []
+    
+    with open(playlist_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith('#') and (line.startswith('/') or line.startswith('\\')):
+                file_paths.append(line)
+    
+    total = len(file_paths)
+    unique_paths = set(file_paths)
+    unique = len(unique_paths)
+    
+    # Find duplicates
+    duplicates = []
+    from collections import Counter
+    path_counts = Counter(file_paths)
+    for path, count in path_counts.items():
+        if count > 1:
+            duplicates.append(f"{path} (appears {count} times)")
+    
+    return total, unique, duplicates
+
+
 def create_playlist_from_sets(
     sets_data: List[dict],
     file_results: dict,
@@ -150,8 +183,9 @@ def create_playlist_from_sets(
     Returns:
         Path to created playlist or None if no files found
     """
-    # Collect all file paths in order
+    # Collect all file paths in order, avoiding duplicates
     all_files = []
+    seen_files = set()  # Track files we've already added
     
     for set_data in sets_data:
         set_name = set_data.get('set_name', 'Unknown Set')
@@ -159,8 +193,12 @@ def create_playlist_from_sets(
         
         for tune in tunes:
             if tune in file_results and file_results[tune]:
-                # Add ALL matches for each tune
-                all_files.extend(file_results[tune])
+                # Add ALL matches for each tune, but skip duplicates
+                for file_path in file_results[tune]:
+                    abs_path = file_path.absolute()
+                    if abs_path not in seen_files:
+                        seen_files.add(abs_path)
+                        all_files.append(file_path)
     
     if not all_files:
         return None

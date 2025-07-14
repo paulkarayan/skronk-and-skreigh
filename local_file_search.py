@@ -63,7 +63,7 @@ def extract_tune_name_from_path(file_path: Path) -> str:
     return name.strip()
 
 
-def is_tune_in_composite_name(tune_name: str, composite_name: str, threshold: float = 0.85) -> bool:
+def is_tune_in_composite_name(tune_name: str, composite_name: str, threshold: float = 0.8) -> bool:
     """
     Check if a tune name appears within a composite track name.
     Handles cases like "Carraroe Jig _ Kesh Jig _ Leaf Reel" containing "Kesh Jig".
@@ -99,7 +99,7 @@ def search_local_files(
     tune_name: str,
     directories: List[str],
     use_aliases: bool = True,
-    threshold: float = 0.85,
+    threshold: float = 0.8,
     recursive: bool = True,
     max_results: Optional[int] = None
 ) -> List[Tuple[Path, float]]:
@@ -188,7 +188,7 @@ def find_tunes_for_set(
     tunes: List[str],
     directories: List[str],
     use_aliases: bool = True,
-    threshold: float = 0.85,
+    threshold: float = 0.8,
     overload: Optional[int] = None
 ) -> Dict[str, List[Path]]:
     """
@@ -267,7 +267,7 @@ def test_local_search():
             tune,
             [test_dir],
             use_aliases=True,
-            threshold=0.7,  # Lower threshold for testing
+            threshold=0.8,  # Lower threshold for testing
             max_results=3
         )
         

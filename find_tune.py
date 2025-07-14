@@ -36,7 +36,7 @@ def format_file_info(file_path: Path, score: float, verbose: bool = False) -> st
 def find_tune_instances(
     tune_name: str,
     directories: List[str],
-    threshold: float = 0.85,
+    threshold: float = 0.8,
     use_aliases: bool = True,
     recursive: bool = True,
     verbose: bool = False,
@@ -107,8 +107,8 @@ def main():
     parser.add_argument(
         "--threshold", "-t",
         type=float,
-        default=0.85,
-        help="Minimum match score 0-1 (default: 0.85)"
+        default=0.8,
+        help="Minimum match score 0-1 (default: 0.8)"
     )
     parser.add_argument(
         "--no-aliases",
@@ -241,6 +241,21 @@ def main():
             )
         
         print(f"\nPlaylist created: {playlist_path}")
+        
+        # Verify no duplicates
+        from vlc_playlist import verify_playlist_no_duplicates
+        total, unique, duplicates = verify_playlist_no_duplicates(playlist_path)
+        
+        if duplicates:
+            print(f"\n⚠️  WARNING: Playlist contains {len(duplicates)} duplicate files!")
+            print("Duplicates found:")
+            for dup in duplicates[:5]:  # Show first 5
+                print(f"  - {dup}")
+            if len(duplicates) > 5:
+                print(f"  ... and {len(duplicates) - 5} more")
+        else:
+            print(f"✓ Verified: {total} unique files in playlist")
+        
         print("\nYou can open this with:")
         # Keep command on one line
         cmd = f'vlc "{playlist_path}"'
