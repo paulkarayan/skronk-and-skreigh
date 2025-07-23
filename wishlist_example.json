@@ -1,0 +1,74 @@
+{
+  "wishlist": [
+    {
+      "artist": "Miles Davis",
+      "title": "Kind of Blue",
+      "format": "LP",
+      "year": "1959",
+      "notes": "Classic modal jazz album"
+    },
+    {
+      "artist": "John Coltrane",
+      "title": "A Love Supreme",
+      "format": "LP",
+      "year": "1965",
+      "notes": "Spiritual jazz masterpiece"
+    },
+    {
+      "artist": "The Beatles",
+      "title": "Abbey Road",
+      "format": "LP",
+      "year": "1969",
+      "notes": "Looking for UK pressing"
+    },
+    {
+      "artist": "Pink Floyd",
+      "title": "The Dark Side of the Moon",
+      "format": "LP",
+      "year": "1973",
+      "notes": "Original or early pressing preferred"
+    },
+    {
+      "artist": "Herbie Hancock",
+      "title": "Head Hunters",
+      "format": "LP",
+      "year": "1973",
+      "notes": "Funk fusion classic"
+    },
+    {
+      "artist": "Radiohead",
+      "title": "OK Computer",
+      "format": "LP",
+      "year": "1997",
+      "notes": "Would love the original pressing"
+    },
+    {
+      "artist": "Nirvana",
+      "title": "Nevermind",
+      "format": "LP",
+      "year": "1991",
+      "notes": "Any pressing is fine"
+    },
+    {
+      "artist": "David Bowie",
+      "title": "Ziggy Stardust",
+      "format": "LP",
+      "year": "1972",
+      "notes": "Ziggy Stardust and the Spiders from Mars"
+    },
+    {
+      "artist": "The Velvet Underground",
+      "title": "The Velvet Underground & Nico",
+      "format": "LP",
+      "year": "1967",
+      "notes": "Banana cover"
+    },
+    {
+      "artist": "Bob Dylan",
+      "title": "Highway 61 Revisited",
+      "format": "LP",
+      "year": "1965",
+      "notes": ""
+    }
+  ]
+}
